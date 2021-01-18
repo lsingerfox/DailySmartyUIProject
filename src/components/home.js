@@ -4,7 +4,7 @@ import SearchBar from "./searchBar";
 import RecentPosts from "./recentPosts";
 
 export default class App extends Component {
-  handleFormSubmit = function({query}) {
+  handleFormSubmit(query) {
     console.log('Handle submit for query', query)
     this.props.history.push('/results');
 }
