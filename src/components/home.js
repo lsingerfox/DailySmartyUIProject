@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
+
 import Logo from "./logo";
 import SearchBar from "./searchBar";
 import RecentPosts from "./recentPosts";
 
-export default class App extends Component {
+class App extends Component {
   handleFormSubmit(query) {
-    console.log('Handle submit for query', query)
+    this.props.fetchPostsViaQuery(query);
     this.props.history.push('/results');
 }
 
@@ -19,3 +22,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default connect(null, actions)(App);

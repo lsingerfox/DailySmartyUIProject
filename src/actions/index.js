@@ -13,3 +13,13 @@ export function fetchRecentPosts() {
             })
     }
 }
+
+export function fetchPostsViaQuery(query) {
+    return function() {
+        axios.get(`http://api.dailysmarty.com/search?q=${query}`)
+            .then(response => {
+                console.log("Posts via Query response", response.data.posts)
+                
+            })
+    }
+}
