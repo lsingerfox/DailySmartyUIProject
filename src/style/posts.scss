@@ -9,4 +9,23 @@
 .recent-posts{
     display: grid;
     justify-items: center;
+
+    .recent-posts-wrapper{
+        display: grid;
+        grid-row-gap: 21px;
+        width: 100%;
+
+        .recent-posts-heading {
+            color: #0079ff;
+        }
+        .recent-posts-posts {
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 40px;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+    }
 }
