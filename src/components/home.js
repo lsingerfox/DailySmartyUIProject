@@ -8,15 +8,16 @@ import RecentPosts from "./recentPosts";
 
 class App extends Component {
   handleFormSubmit(query) {
-    this.props.fetchPostsViaQuery(query);
+    this.props.fetchPostsViaQuery(query, () => {
     this.props.history.push('/results');
+  });
 }
 
   render() {
     return (
       <div className='home'>
         <Logo/>
-        <SearchBar onSubmit={ (query) => this.handleFormSubmit(query) }/>
+        <SearchBar page="home" onSubmit={ (query) => this.handleFormSubmit(query) }/>
         <RecentPosts/>
       </div>
     );

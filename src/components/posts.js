@@ -1,11 +1,41 @@
 import React, { Component } from 'react';
+import AnimateHeight from 'react-animate-height';
 
 class Posts extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            height: 0
+        }
+    }
+
     renderTopics() {
         let topics = this.props.associated_topics.map((topic, index) => {
             return <span className="post-topic" key={index}>{topic}</span>
         })
         return topics;
+    }
+
+    getNameForPostLink(str) {
+        var n = str.lastIndexOf('/');
+        var link = str.substring(n + 1, str.length);
+
+        if ((n + 1) == str.length) {
+            link = str.slice(0,n);
+            n = link.lastIndexOf('/');
+            link = str.substring(n + 1, str.length - 1);
+        }
+
+        if(link.includes('.html')) {
+            link = link.substring(0, link.length - 5);
+        }
+
+        if(link.includes('.htm')) {
+            link = link.substring(0, link.length - 4)
+        }
+
+        return link;
     }
 
     renderLinks() {
@@ -16,11 +46,14 @@ class Posts extends Component {
 
                     </div>
                     <div className="post-link-link">
-                        <a href={post_links.link_url}>Link # {index + 1}</a>
+                        <a href={post_links.link_url}>{this.getNameForPostLink(post_links.link_url)}</a>
                     </div>
                 </div>
             )
         })
+        if(links == 0) {
+            return <div className="no-content">No Post Links</div>
+        }
         return links;
     }
 
@@ -29,7 +62,7 @@ class Posts extends Component {
             return (
                 <li className="recent-post">
                     <div className="recent-post-title">
-                        {this.props.title}
+                        <a href={this.props.url_for_post}>{this.props.title}</a>
                     </div>
                     <div className="recent-post-topics">
                         {this.renderTopics()}
@@ -38,16 +71,24 @@ class Posts extends Component {
             )
         } else if (this.props.type == 'result'){}
         return (
-            <li className="result-post">
+            <li className="result-post"
+                onMouseEnter={() => this.state({ height: 70 })}
+                onMouseLeave={() => this.state({ height: 0 })}
+            >
                 <div className="result-post-topics">
                     {this.renderTopics()}
                 </div>
                 <div className="results-post-title">
                     {this.props.title}
                 </div>
-                <div className="results-post-links">
-                    {this.renderLinks()}
-                </div>
+                <AnimateHeight
+                    duration={500}
+                    height={this.state.height}
+                >
+                    <div className="results-post-links">
+                        {this.renderLinks()}
+                    </div>
+                </AnimateHeight>
             </li>
         )
     }

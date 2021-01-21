@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 import Posts from './posts';
 
 class ResultsPosts extends Component {
-    renderPosts = function() {
-        const posts = this.props.resultsPosts.map((post, index) => {
+    renderPosts() {
+        const resultsPosts = this.props.resultsPosts.map((post, index) => {
             return <Posts type="result" {...post} key={index} />
         })
 
-        return posts
+        return resultsPosts;
     }
 
     render() {
