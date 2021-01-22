@@ -6,14 +6,14 @@
 
         input{
             padding-left: 35px;
-            color: #666666;
+            color: $dimGrey;
             box-shadow: 2px 3px 20px 1px rgba(0, 0, 0, 0.1);
             border: 0px solid transparent;
             border-radius: 5px;
             font-size: 3em;
 
             &::placeholder{
-                color: #b3b3b3;
+                color: $silver;
                 font-family: 'Font Awesome\ 5 Free', 'Lato', Arial, Helvetica, sans-serif;
                 font-weight: 600;
             }
@@ -32,7 +32,7 @@
         p{
             text-align: right;
             font-size: 14px;
-            color: #b3b3b3;
+            color: $silver;
         }
     }
 }

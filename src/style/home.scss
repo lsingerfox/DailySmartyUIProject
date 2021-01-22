@@ -12,11 +12,7 @@ body{
 }
 
 .home{
-    height: 100vh;
-    width: 66vw;
-
-    display: grid;
-    align-content: space-around;
+    @include default-page-layout();
     justify-items: stretch;
 
 }
