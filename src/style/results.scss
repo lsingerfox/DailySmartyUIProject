@@ -1,3 +1,14 @@
 .results{
     @include default-page-layout();
 }
+
+.search-bar-result{
+    align-content: center;
+    input{
+        height: 50px;
+        
+        &::placeholder{
+            font-size: 35px;
+        }
+    }
+}

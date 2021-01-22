@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div className='home'>
         <Logo/>
-        <SearchBar page="/" onSubmit={ (query) => this.handleFormSubmit(query) }/>
+        <SearchBar page="home" onSubmit={ (query) => this.handleFormSubmit(query) }/>
         <RecentPosts/>
       </div>
     );
