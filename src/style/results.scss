@@ -1,14 +1,51 @@
 .results{
     @include default-page-layout();
+
+    margin-top: 52px;
+    grid-row-gap: 44px;
 }
 
 .search-bar-result{
     align-content: center;
     input{
-        height: 50px;
+        height: 40px;
         
         &::placeholder{
-            font-size: 35px;
+            font-size: 20px;
+            position: relative;
+            top: -8px
         }
+    }
+}
+
+.results-posts{
+    .results-posts-wrapper{
+        .results-posts-posts{
+            display: grid;
+            grid-row-gap: 20px;
+        }
+    }
+}
+
+.results-post{
+    display: grid;
+    align-content: space-around;
+    grid-row-gap: 22px;
+
+    .results-post-topics > *{
+        color: $azure;
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: normal;
+    }
+
+    .results-post-title a{
+        color: $dimGrey;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .results-post-links{
+        color: $azure;
     }
 }

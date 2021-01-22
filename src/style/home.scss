@@ -13,6 +13,7 @@ body{
 
 .home{
     @include default-page-layout();
+    align-content: space-around;
     justify-items: stretch;
 
 }
