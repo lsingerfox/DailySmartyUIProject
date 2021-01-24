@@ -22,7 +22,7 @@ class Posts extends Component {
             return(
                 <div className="post-link" key={index}>
                     <div className="post-link-box">
-                    
+
                     </div>
                     <div className="post-link-link">
                         <a href={post_links.link_url}>Link # { index + 1 }</a>
@@ -50,11 +50,11 @@ class Posts extends Component {
             )
         } else if (this.props.type == 'result'){}
         return (
-            <li className="result-post"
+            <li className="results-post"
                 onMouseEnter={() => this.setState({ height: 70 })}
                 onMouseLeave={() => this.setState({ height: 0 })}
             >
-                <div className="result-post-topics">
+                <div className="results-post-topics">
                     {this.renderTopics()}
                 </div>
                 <div className="results-post-title">

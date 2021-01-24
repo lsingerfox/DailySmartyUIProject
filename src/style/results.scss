@@ -27,6 +27,7 @@
             display: grid;
             grid-row-gap: 20px;
             justify-content: stretch;
+            list-style-type: none;
         }
     }
 }
@@ -47,6 +48,13 @@
         color: $dimGrey;
         font-size: 18px;
         line-height: 22px;
+        text-decoration: none;
+    }
+
+    .results-post-title a:hover{
+        color: $azure;
+        text-decoration: underline;
+        transition: all 0.5s ease-in-out;
     }
 
     .results-post-links{
@@ -60,13 +68,14 @@
     min-height: 70px;
 
     .post-link-box{
-        
+        display: flex;
     }
 
     .post-link-link a{
         color: $lightSilver;
         font-size: 14px;
         line-height:17px;
+        text-decoration: none;
     }
 
     .post-link-link a::before{
@@ -76,5 +85,11 @@
         margin-right: 16px;
         vertical-align: middle;
         font-weight: 900;
+    }
+
+    .post-link-link a:hover{
+        color: $azure;
+        text-decoration: underline;
+        transition: all 0.5s ease-in-out;
     }
 }
