@@ -19,10 +19,14 @@
 }
 
 .results-posts{
+    display: grid;
+    grid-row-gap: 21px;
+
     .results-posts-wrapper{
         .results-posts-posts{
             display: grid;
             grid-row-gap: 20px;
+            justify-content: stretch;
         }
     }
 }
@@ -46,6 +50,31 @@
     }
 
     .results-post-links{
+        display: flex;
         color: $azure;
+    }
+}
+
+.post-link{
+    display: flex;
+    min-height: 70px;
+
+    .post-link-box{
+        
+    }
+
+    .post-link-link a{
+        color: $lightSilver;
+        font-size: 14px;
+        line-height:17px;
+    }
+
+    .post-link-link a::before{
+        font-family: "Font Awesome\ 5 Free";
+        content:"\f0c1";
+        display: inline-block;
+        margin-right: 16px;
+        vertical-align: middle;
+        font-weight: 900;
     }
 }
