@@ -20,7 +20,7 @@ class Posts extends Component {
     getPostLinkName(str) {
         var n = str.lastIndexOf('/');
         var link = str.substring(n + 1, str.length);
-        
+
         if((n + 1) == str.length) {
             link = str.slice(0, n);
             n = link.lastIndexOf('/');
@@ -36,7 +36,11 @@ class Posts extends Component {
             link = link.substring(0, link.length -4)
         }
 
-        return res;
+        if(link.includes('.org')) {
+            link = link.substring(0, link.length -4)
+        }
+
+        return link;
     }
 
     renderLinks() {

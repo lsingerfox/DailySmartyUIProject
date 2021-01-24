@@ -60,6 +60,11 @@
     .results-post-links{
         display: flex;
         color: $azure;
+
+        a {
+            flex-basis: 207px;
+            margin-right: 37px;
+        }
     }
 }
 
@@ -92,4 +97,8 @@
         text-decoration: underline;
         transition: all 0.5s ease-in-out;
     }
+}
+
+.no-content{
+    color: $silver;
 }
