@@ -26,3 +26,19 @@ body{
         font-size: 43px;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .search-bar-home{
+        align-content: center;
+        justify-items: center;
+        input{
+            height: 55px;
+            width: 66vw;
+        }
+        input::placeholder{
+            font-size: 22px;
+            position: relative;
+            top: -8px;
+        }
+    }    
+}
